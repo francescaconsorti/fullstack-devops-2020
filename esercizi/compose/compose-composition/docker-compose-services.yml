@@ -12,7 +12,7 @@ services:
     depends_on:
       - mongo
 
-  like-service:
+   like-service:
     build: like-service
     restart: on-failure
     labels:

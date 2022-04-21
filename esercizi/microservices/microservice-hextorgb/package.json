@@ -6,8 +6,8 @@
   "homepage": "",
   "license": "GPL-3.0",
   "author": {
-    "name": "Gianni Bombelli (bombo82)",
-    "email": "bombo82@giannibombelli.it"
+    "name": "Francesca Consorti (francescaconsorti)",
+    "email": "francesca.consorti@gmail.com"
   },
   "contributors": [],
   "main": "dist/microservice-template/src/HttpServer.js",

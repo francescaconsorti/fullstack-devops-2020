@@ -1,13 +1,14 @@
+import { RGB, HEX } from 'color-convert/conversions';
 import {convert} from '../service/Service';
 import {Express} from 'express';
 
 class HttpController {
     constructor(server: Express) {
         server.get('/', (req, res) => {
-            const color = JSON.parse(req.query.color) as ColorModel;
-            const convertedColor: ColorModel = convert(color);
+            const color:HEX = req.query.color as string ;
+            const convertedColor: RGB = convert(color);
 
-            res.send(convertedColor);
+            res.send({rgb:convertedColor});
         });
     }
 }

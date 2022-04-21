@@ -10,6 +10,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
+  microservice-hextorgb:
+    build: microservice-hextorgb
+    restart: on-failure
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.microservice-hextorgb.rule=PathPrefix(`/microservice-hextorgb`)"
+      - "traefik.http.routers.microservice-hextorgb.middlewares=microservice-hextorgb-stripprefix"
+      - "traefik.http.services.microservice-hextorgb.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.microservice-hextorgb-stripprefix.stripprefix.prefixes=/microservice-hextorgb"
+
+
+
 #  <microservice-example-name>:
 #    build: <microservice-example-name>
 #    restart: "no"

@@ -8,7 +8,7 @@ class HttpController {
             const color:HEX = req.query.color as string ;
             const convertedColor: RGB = convert(color);
 
-            res.send({rgb:convertedColor});
+            res.send({inputHEX:color, outputRGB:convertedColor});
         });
     }
 }

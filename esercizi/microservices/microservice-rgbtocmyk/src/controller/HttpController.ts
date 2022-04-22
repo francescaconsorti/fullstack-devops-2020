@@ -10,8 +10,8 @@ type RGBType = {
 class HttpController {
     constructor(server: Express) {
         server.get('/', (req, res) => {
-            const stringcolor: RGBType =JSON.parse(req.query.color as string);
-            const color:RGB = [stringcolor.r, stringcolor.g, stringcolor.b];
+            const inputcolor: RGBType =JSON.parse(req.query.color as string);
+            const color:RGB = [inputcolor.r, inputcolor.g, inputcolor.b];
             const convertedColor: CMYK = convert(color);
 
             res.send({inputRGB:color, outputCMYK:convertedColor});

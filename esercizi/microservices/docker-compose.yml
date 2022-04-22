@@ -40,6 +40,17 @@ services:
       - "traefik.http.services.microservice-cmyktohsl.loadbalancer.server.port=3000"
       - "traefik.http.middlewares.microservice-cmyktohsl-stripprefix.stripprefix.prefixes=/microservice-cmyktohsl"
 
+  microservice-hsltohex:
+    build: microservice-hsltohex
+    restart: on-failure
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.microservice-hsltohex.rule=PathPrefix(`/microservice-hsltohex`)"
+      - "traefik.http.routers.microservice-hsltohex.middlewares=microservice-hsltohex-stripprefix"
+      - "traefik.http.services.microservice-hsltohex.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.microservice-hsltohex-stripprefix.stripprefix.prefixes=/microservice-hsltohex"
+
+
 
 
 #  <microservice-example-name>:

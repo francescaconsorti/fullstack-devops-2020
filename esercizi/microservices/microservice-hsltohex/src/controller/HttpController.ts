@@ -1,4 +1,4 @@
-import { HSL,HEX  } from 'color-convert/conversions';
+import { HSL } from 'color-convert/conversions';
 import {convert} from '../service/Service';
 import {Express} from 'express';
 
